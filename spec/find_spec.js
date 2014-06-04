@@ -3,13 +3,13 @@
  */
 
 describe('find', function() {
-    it('takes an array, and a function, passes each value from the array into the function,  returning the first one that passes a truth test ', function() {
+    it('takes an array, and a function, passes each value from the array into the function,  returns the first one that passes a truth test in the function', function() {
         expect(find([3, 2, 4], function(n) { return n % 2 == 0; })).toEqual(2);
     });
-    it('takes an array, a function, and an initial value, passes each value from the array into the function, calculate all the values and returns a value', function() {
-        expect(find([3, 5, 4], function(n) { return n % 2 == 0; })).toEqual(4);
+    it('takes an array and returns first element in the array that passes a truth test in the function then breaks the loop', function() {
+        expect(find([2, 3, 5, 4], function(n) { return n % 2 !== 0; })).toEqual(3);
     });
-    it('takes an array, a function, and an initial value, passes each value from the array into the function, calculate all the values and returns a value', function() {
+    it('if no element passes the truth test in the array it returns undefined', function() {
         expect(find([3, 5, 7], function(n) { return n % 2 == 0; })).toEqual(undefined);
     });
 });
