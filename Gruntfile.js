@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish'),
                 jshintrc: true
             },
-            lint: ['Gruntfile.js', 'src/**/*.js']
+            lint: ['Gruntfile.js', 'src/**/*.js','spec/**/*_spec.js']
         },
         karma: {
             spec: {
