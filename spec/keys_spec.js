@@ -1,4 +1,4 @@
-describe(keys, function() {
+describe('keys', function() {
     it('takes an object, returns an array contains the keys of object', function() {
         expect(keys({first:1, second:2, three:3, four:4})).toEqual(["first", "second", "three", "four"]);
     });
