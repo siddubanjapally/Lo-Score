@@ -1,0 +1,22 @@
+{
+  "name": "Lo-Score",
+  "version": "0.0.0",
+  "description": "functional programming library for javascript",
+  "main": "loscore.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/technoidentity/Lo-Score.git"
+  },
+  "keywords": [
+    "functional"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technoidentity/Lo-Score/issues"
+  },
+  "homepage": "https://github.com/technoidentity/Lo-Score"
+}
