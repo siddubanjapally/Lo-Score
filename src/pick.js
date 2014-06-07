@@ -9,7 +9,7 @@ var getKeys = function(obj) {
     return result;
 };
 
-var invoke = function(args, key, obj) {
+var getArgsKeys = function(args, key, obj) {
     var result = [];
     for(var i = 0; i < args.length; ++i) {
         if(typeof args[i] === 'function') {
@@ -24,7 +24,7 @@ var invoke = function(args, key, obj) {
     return result;
 };
 
-var getResult = function(arr, obj) {
+var _pick = function(arr, obj) {
     var resObj = {};
     for(var i in arr)
         resObj[arr[i]] = obj[arr[i]];
@@ -35,6 +35,6 @@ var pick = function(obj) {
     var args = Array.prototype.slice.call(arguments, 1);
     var keys = getKeys(obj), res = [];
     for(var k in keys)
-        res = res.concat(invoke(args, keys[k], obj));
-    return getResult(res, obj);
+        res = res.concat(getArgsKeys(args, keys[k], obj));
+    return _pick(res, obj);
 };

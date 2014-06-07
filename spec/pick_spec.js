@@ -35,7 +35,7 @@ describe('pick', function() {
             return typeof key === 'number';
         }, 'id')).toEqual({id:1});
     });
-    it('if passed an object and a callback, returns based on callback value', function() {
+    it('if passed an object and a callback along with multiple arguments, returns based on callback value', function() {
         expect(pick({id:1, lang:'Javascript'}, function(key, value) {
             return typeof key === 'number';
         }, 'id', 'name', 'lang')).toEqual({id:1, lang:'Javascript'});
