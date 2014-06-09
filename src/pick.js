@@ -11,16 +11,8 @@ var getKeys = function(obj) {
 
 var getArgsKeys = function(args, key, obj) {
     var result = [];
-    for(var i = 0; i < args.length; ++i) {
-        if(typeof args[i] === 'function') {
-            if(args[i](key, obj[key]))
-                result.push(key);
-        }
-        else if(typeof args[i] === 'string'){
-            if(args[i] in obj)
-                result.push(args[i]);
-        }
-    }
+    for(var i = 0; i < args.length; ++i)
+        typeof args[i] === 'function' ? (args[i](key, obj[key]) ? result.push(key) : '') : (typeof args[i] === 'string' ? (args[i] in obj ? result.push(args[i]) : ''): '');
     return result;
 };
 
