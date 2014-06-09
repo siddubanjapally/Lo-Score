@@ -7,24 +7,14 @@ var getKeys = function(obj) {
 
 var getArgsKeys = function(args, key, obj) {
     var result = [];
-    for(var i = 0; i < args.length; ++i) {
-        if(typeof args[i] === 'function') {
-            if(args[i](key, obj[key]))
-                result.push(key);
-        }
-        else if(typeof args[i] === 'string'){
-            if(args[i] in obj)
-                result.push(args[i]);
-        }
-    }
+    for(var i = 0; i < args.length; ++i)
+        typeof args[i] === 'function' ? (args[i](key, obj[key]) ? result.push(key) : '') : (typeof args[i] === 'string' ? (args[i] in obj ? result.push(args[i]) : ''): '');
     return result;
 };
 
 var _omit = function(arr, obj) {
-    for(var i in arr) {
-        if(arr[i] in obj)
-            delete obj[arr[i]];
-    }
+    for(var i in arr)
+        arr[i] in obj ? delete obj[arr[i]]: '';
     return obj;
 };
 
