@@ -19,6 +19,6 @@ describe('type_check', function() {
         expect(isArray([1, 2, 3])).toEqual(true);
     });
     it('', function() {
-        expect(isObject({id: 1, name: "techno"})).toEqual(true);
+        expect(isObject({id: 1, name: 'techno'})).toEqual(true);
     });
 });
