@@ -3,8 +3,15 @@
  */
 var flatten = function(arr) {
     var result = [];
-    arr.forEach(function(value) {
+    each(arr,function(value) {
         [].push.apply(result,Array.isArray(value) ? flatten(value) : [value]);
     });
     return result;
 };
+//var flatten = function() {
+//    return reduce(arguments,
+//        function(acc, e) {
+//            return concat(acc, isArray(e) ? flatten(e) : [e]);
+//        }
+//    );
+//};
