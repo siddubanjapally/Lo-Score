@@ -8,8 +8,4 @@ describe('groupBy', function() {
             })
         ).toEqual({1: [1.3], 2: [2.1, 2.4]});
     });
-    it('Splits a collection into sets, grouped by the result of running each value through iterator.',function() {
-        expect(groupBy(['one', 'two', 'three'], 'length')).toEqual({3: ['one', 'two'], 5: ['three']});
-    });
-
 });
