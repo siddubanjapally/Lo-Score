@@ -3,21 +3,15 @@
  */
 
 var checkIterator = function(ele, f) {
-    if(typeof f === 'function') return f(ele);
-    if(ele.hasOwnProperty('length')) return ele.length;
+    if(typeof f === 'function')
+        return f(ele);
     return f ? ele[f] : ele;
 };
 var groupBy = function(list, f) {
-    var groups = {},
-        length = list.length;
-    for(var i = 0; i < length; ++i) {
-        value = checkIterator(list[i], f);
-        if(value in groups){
-            groups[value].push(list[i]);
-        }
-        else{
-            groups[value] =[list[i]];
-        }
-    }
+    var groups = {};
+    each(list, function(i) {
+        value = checkIterator(i, f);
+        value in groups ? groups[value].push(i) : groups[value] = [i];
+    });
     return groups;
  };
