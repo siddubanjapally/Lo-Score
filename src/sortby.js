@@ -1,7 +1,6 @@
 /**
  * Created by sidhu on 9/6/14.
  */
-
 var sort = function(coll, init) {
     var minValue;
     while(coll.length){
